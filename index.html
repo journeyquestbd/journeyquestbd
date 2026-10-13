@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journey Quest BD | Visa, air tickets, hotels and tours in Dhaka</title>
+<meta name="description" content="Journey Quest BD is a travel agency at 14 Shantinagar Road, Dhaka. Visa processing, air ticket booking, hotel booking, tour packages and travel insurance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1b4468; --navy-d:#12304b; --gold:#b89b62; --gold-l:#efe5d0;
+  --bg:#ffffff; --soft:#f4f6f9; --ink:#14212e; --mute:#5b6b7a; --line:#dde3ea; --ok:#2f8f5b;
+  --head:'Sora','Hind Siliguri',system-ui,sans-serif;
+  --body:'Nunito Sans','Hind Siliguri',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3{font-family:var(--head);line-height:1.2;margin:0 0 .5em;color:var(--navy-d)}
+h1{font-size:clamp(1.9rem,4.6vw,3.1rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.4rem,3vw,2rem)}
+h3{font-size:1.1rem}
+p{margin:0 0 1em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand img{height:46px;width:auto}
+nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--ink);padding:8px 14px;border-radius:8px;font-weight:600;font-size:.95rem}
+nav a:hover{background:var(--soft)}
+nav a.on{background:var(--navy);color:#fff}
+.call{background:var(--gold);color:#fff;text-decoration:none;font-weight:700;padding:9px 16px;border-radius:8px;white-space:nowrap}
+.call:hover{background:#a58a53}
+
+/* buttons */
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:10px;background:var(--navy);color:#fff}
+.btn:hover{background:var(--navy-d)}
+.btn.alt{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.btn.alt:hover{background:var(--soft)}
+.btn.gold{background:var(--gold)}
+
+/* pages */
+.page{display:none}
+.page.on{display:block}
+section{padding:56px 0}
+.hero{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
+.hero h1{color:#fff;max-width:18ch}
+.hero .bn{color:var(--gold-l);font-family:var(--body);font-size:1.1rem;margin-bottom:12px}
+.hero p.lead{max-width:56ch;font-size:1.1rem;color:#dbe6f0}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero .btn.alt{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.hero .btn.alt:hover{background:rgba(255,255,255,.12)}
+.hero .arc{position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;border:56px solid rgba(184,155,98,.28)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;color:#cfdce8;font-size:.95rem}
+.facts b{color:#fff}
+.ticker{background:var(--gold-l);color:var(--navy-d);font-weight:600;font-size:.9rem;padding:10px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-right:36px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.card.link{text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .15s}
+.card.link:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card .ic{font-size:1.8rem}
+.card p{color:var(--mute);margin:0}
+.more{font-weight:700;color:var(--navy);margin-top:12px;display:block}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps div{background:var(--soft);border-radius:14px;padding:20px}
+.steps div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--head);font-weight:600;margin-bottom:10px}
+.note{background:var(--gold-l);border-left:4px solid var(--gold);border-radius:8px;padding:14px 18px;margin-top:22px;font-size:.95rem}
+.rating{display:flex;align-items:center;gap:18px;background:var(--soft);border-radius:14px;padding:22px;margin-top:36px;flex-wrap:wrap}
+.rating b{font-family:var(--head);font-size:2.4rem;color:var(--navy)}
+.stars{color:var(--gold);letter-spacing:3px;font-size:1.2rem}
+.pagehead{background:var(--soft);padding:44px 0 32px;border-bottom:1px solid var(--line)}
+.pagehead .bn{color:var(--gold);font-weight:600;margin-bottom:6px}
+.pagehead p{color:var(--mute);max-width:60ch;margin:0}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;padding:32px 0;border-bottom:1px solid var(--line)}
+.svc ul{padding-left:18px;margin:0 0 16px;color:var(--mute)}
+.svc li{margin:4px 0}
+
+/* visa documents */
+.countries{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.chip{border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.empty{border:2px dashed var(--line);border-radius:14px;padding:40px;text-align:center;color:var(--mute);margin-top:18px}
+.panel{display:none;margin-top:22px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+.panel.on{display:grid}
+.who{display:inline-flex;background:var(--soft);border-radius:10px;padding:4px;margin:10px 0 16px}
+.who button{border:0;background:transparent;font:inherit;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;color:var(--mute)}
+.who button[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.prog{height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--ok));transition:width .25s}
+.progtxt{display:flex;justify-content:space-between;font-weight:600;font-size:.92rem;margin:6px 0 18px;color:var(--mute)}
+.group{margin-bottom:20px}
+.group h3{font-size:1rem;color:var(--navy);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:8px}
+.group label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;cursor:pointer}
+.group label:hover{background:var(--soft)}
+.group input{margin-top:5px;width:18px;height:18px;accent-color:var(--navy);flex:none}
+.group input:checked + span{color:var(--mute);text-decoration:line-through}
+.sheet{position:sticky;top:90px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.sheet img{width:100%;height:auto;cursor:zoom-in}
+.sheet .cap{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 14px;background:var(--soft);font-weight:600;font-size:.92rem;flex-wrap:wrap}
+.sheet .cap a{font-weight:700}
+.warn{font-size:.9rem;color:var(--mute);margin-top:26px}
+#zoom{position:fixed;inset:0;background:rgba(10,20,30,.88);display:none;z-index:50;overflow:auto;padding:20px;text-align:center}
+#zoom.on{display:block}
+#zoom img{max-width:min(900px,100%);margin:0 auto;border-radius:6px;background:#fff}
+#zoom button{position:fixed;top:14px;right:18px;font-size:1.6rem;background:#fff;border:0;border-radius:50%;width:42px;height:42px;cursor:pointer}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.info div{padding:14px 0;border-bottom:1px solid var(--line)}
+.info small{display:block;color:var(--mute);font-weight:600}
+form{display:grid;gap:12px}
+label.f{display:grid;gap:4px;font-weight:600;font-size:.92rem}
+input[type=text],select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:#fff;width:100%}
+textarea{min-height:90px;resize:vertical}
+.fine{font-size:.85rem;color:var(--mute)}
+
+footer{background:var(--navy-d);color:#c9d6e2;padding:28px 0;font-size:.92rem}
+footer .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+footer img{height:38px;background:#fff;border-radius:6px;padding:3px}
+
+
+/* ---------- animations ---------- */
+#splash{position:fixed;inset:0;z-index:100;background:#fff;display:grid;place-items:center;transition:opacity .6s ease,visibility .6s}
+#splash.out{opacity:0;visibility:hidden}
+#splash .in{text-align:center;position:relative;width:min(420px,86vw)}
+#splash img{width:100%;animation:logoIn 1.1s cubic-bezier(.2,.8,.2,1) both}
+#splash .tag{margin-top:6px;color:var(--mute);font-weight:600;letter-spacing:.04em;animation:fadeUp .8s .9s both}
+#splash svg{position:absolute;left:-10%;right:-10%;bottom:-70px;width:120%;height:90px;overflow:visible}
+#splash .trail{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-dasharray:6 8;stroke-dashoffset:0;opacity:.8;animation:dash 1.6s .5s linear both}
+#splash .jet{offset-path:path('M0 70 Q 250 -10 500 40');offset-rotate:auto;animation:fly 2s .4s cubic-bezier(.4,0,.2,1) both;fill:var(--navy)}
+@keyframes logoIn{from{opacity:0;transform:scale(.7) rotate(-6deg)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fly{from{offset-distance:0%;opacity:0}12%{opacity:1}to{offset-distance:100%;opacity:1}}
+@keyframes dash{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+
+.brand{position:relative;overflow:hidden;border-radius:6px}
+.brand::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-18deg);animation:shine 6s 2.5s infinite}
+@keyframes shine{0%{left:-60%}22%,100%{left:140%}}
+
+.hero .flight{position:absolute;left:0;right:0;bottom:0;height:100%;pointer-events:none;overflow:hidden}
+.hero .flight svg{position:absolute;inset:0;width:100%;height:100%}
+.hero .flight .trail{fill:none;stroke:rgba(184,155,98,.55);stroke-width:2;stroke-dasharray:3 9}
+.hero .plane{position:absolute;left:0;top:0;width:44px;height:44px;offset-path:path('M-40 420 C 260 300, 560 380, 760 200 S 1100 20, 1300 -30');offset-rotate:auto;animation:cruise 14s linear infinite}
+.hero .plane svg{position:static;fill:#fff;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+@keyframes cruise{from{offset-distance:0%;opacity:0}6%{opacity:1}94%{opacity:1}to{offset-distance:100%;opacity:0}}
+.hero .wrap{position:relative;z-index:1}
+.hero .arc{animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.ticker .track{display:inline-flex;animation:marq 26s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+.page.on{animation:pagein .45s ease both}
+@keyframes pagein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* hero logo */
+.herogrid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.logocard{position:relative;display:grid;place-items:center;min-height:340px;animation:lcIn 1.2s .2s cubic-bezier(.2,.8,.2,1) both}
+.logocard .lc{position:relative;z-index:1;background:#fff;border-radius:28px;padding:26px 30px;box-shadow:0 24px 60px rgba(0,0,0,.35);width:min(420px,100%);overflow:hidden;animation:floaty 5s ease-in-out infinite}
+.logocard .lc img{width:100%;height:auto}
+.logocard .lc::after{content:"";position:absolute;top:0;left:-60%;width:35%;height:100%;background:linear-gradient(100deg,transparent,rgba(184,155,98,.35),transparent);transform:skewX(-18deg);animation:shine 5s 1.5s infinite}
+.logocard .orbit{position:absolute;width:min(470px,100%);aspect-ratio:1;border-radius:50%;border:2px dashed rgba(184,155,98,.6);animation:spin 18s linear infinite}
+.logocard .orbit i{position:absolute;top:-9px;left:50%;margin-left:-9px;width:18px;height:18px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(184,155,98,.25)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes lcIn{from{opacity:0;transform:scale(.75) translateY(20px)}to{opacity:1;transform:none}}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr}.logocard{order:-1;min-height:240px}.logocard .lc{width:min(300px,80%)}.logocard .orbit{width:min(330px,90%)}}
+
+@media(max-width:860px){
+  .grid3,.steps,.svc,.contact,.panel.on{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .sheet{position:static}
+  .bar{flex-wrap:wrap;padding:8px 0}
+  nav{order:3;width:100%;margin-left:0}
+  .call{margin-left:auto}
+  .hero .arc{display:none}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}#splash{display:none}}
+</style>
+</head>
+<body>
+<div id="splash" aria-hidden="true"><div class="in"><img src="images/logo.png" alt=""><div class="tag">Explore. Experience. Remember.</div>
+<svg viewBox="0 0 500 80" preserveAspectRatio="none"><path class="trail" d="M0 70 Q 250 -10 500 40"/><g class="jet"><path d="M-16 0 L10 -4 L-2 -16 L4 -16 L22 -4 L34 -4 Q40 0 34 4 L22 4 L4 16 L-2 16 L10 4 Z"/></g></svg></div></div>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#/" aria-label="Journey Quest BD home"><img src="images/logo.png" alt="Journey Quest - Explore. Experience. Remember"></a>
+    <nav aria-label="Main">
+      <a href="#/" data-r="home">Home</a>
+      <a href="#/services" data-r="services">Our services</a>
+      <a href="#/documents" data-r="documents">Visa documents</a>
+      <a href="#/contact" data-r="contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:01805447210">Call 01805-447210</a>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<div class="page" id="p-home">
+  <div class="hero">
+    <div class="arc" aria-hidden="true"></div>
+    <div class="flight" aria-hidden="true"><svg viewBox="0 0 1200 460" preserveAspectRatio="none"><path class="trail" d="M-40 420 C 260 300, 560 380, 760 200 S 1100 20, 1300 -30"/></svg>
+<div class="plane"><svg viewBox="-20 -20 60 40"><path d="M-16 0 L10 -4 L-2 -16 L4 -16 L22 -4 L34 -4 Q40 0 34 4 L22 4 L4 16 L-2 16 L10 4 Z"/></svg></div></div>
+
+    <div class="wrap herogrid">
+      <div class="txt">
+      <div class="bn">ভিসা, টিকিট আর হোটেল — সব এক জায়গায়</div>
+      <h1>Your visa, flight and hotel, handled from one office in Shantinagar.</h1>
+      <p class="lead">Journey Quest BD helps you plan trips abroad. Tell us where you want to go and we will guide you through the visa, book your ticket and hotel, and put together a tour that fits.</p>
+      <div class="acts"><a class="btn gold" href="#/contact">Plan my trip</a><a class="btn alt" href="#/services">See our services</a></div>
+      <div class="facts"><span><b>5.0</b> on Google (5 reviews)</span><span>Open daily, closes 6 PM</span><span>14 Shantinagar Rd, Dhaka</span></div>
+      </div>
+      <div class="logocard" aria-hidden="false">
+        <div class="orbit" aria-hidden="true"><i></i></div>
+        <div class="lc"><img src="images/logo.png" alt="Journey Quest BD - Explore. Experience. Remember"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker"><div class="track"><span>Visa processing</span><span>Tourist visa</span><span>Visa consultancy</span><span>Air ticket booking</span><span>Hotel booking</span><span>Tour packages</span><span>Travel insurance</span><span>Visa processing</span><span>Tourist visa</span><span>Visa consultancy</span><span>Air ticket booking</span><span>Hotel booking</span><span>Tour packages</span><span>Travel insurance</span></div></div>
+
+  <section><div class="wrap">
+    <h2>The three things we do most</h2>
+    <p>Visa, flight and hotel. Open any of them to see how we work and which documents you will need.</p>
+    <div class="grid3">
+      <a class="card link" href="#/documents"><div class="ic">🛂</div><h3>Visa processing</h3><p>We prepare your file and apply for you.</p><span class="more">See visa documents</span></a>
+      <a class="card link" href="#/services"><div class="ic">🏨</div><h3>Hotel booking</h3><p>A place to stay that fits your plan and budget.</p><span class="more">See how it works</span></a>
+      <a class="card link" href="#/services"><div class="ic">✈️</div><h3>Air booking</h3><p>Flights from Dhaka to your destination and back.</p><span class="more">See how it works</span></a>
+    </div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <h2>How it works</h2>
+    <p>Four steps from first message to boarding.</p>
+    <div class="steps">
+      <div><h3>Tell us your plan</h3><p>Destination, dates and who is travelling. A call or message is enough.</p></div>
+      <div><h3>Get clear advice</h3><p>We explain the visa type, documents and the best way to book.</p></div>
+      <div><h3>We arrange it</h3><p>We handle the application, ticket and hotel with you.</p></div>
+      <div><h3>You travel</h3><p>Leave with your papers in order and your bookings confirmed.</p></div>
+    </div>
+    <div class="note">Visa approval is decided by the embassy or consulate, not by any agency. We help you apply correctly and completely, but we cannot promise a result.</div>
+    <div class="rating"><b>5.0</b><div><div class="stars" aria-label="5 out of 5 stars">★★★★★</div>Rated by 5 customers on Google. Read what they said, or leave your own review after your trip.</div><a class="btn alt" href="https://www.google.com/search?q=journey+quest+bd" target="_blank" rel="noopener">See Google reviews</a></div>
+  </div></section>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="p-services">
+  <div class="pagehead"><div class="wrap"><div class="bn">আমাদের সেবা</div><h1>Our services</h1><p>Everything for your trip, from the visa file to the hotel room. Use one service or all of them together.</p></div></div>
+  <div class="wrap">
+    <div class="svc"><div><h2>Visa processing</h2><p>We check which visa fits your trip, collect the right documents, fill in the forms and submit your application.</p>
+      <ul><li>Tourist visa processing</li><li>Visa consultancy before you apply</li><li>Document checklist for your destination</li><li>Help with forms, bookings and appointments</li></ul>
+      <a class="btn" href="#/documents">See visa documents</a> <a class="btn alt" href="#/contact">Ask about my visa</a></div>
+      <div class="card"><div class="ic">🛂</div><p>17 country checklists are ready on the Visa documents page, with the official document sheet for each country.</p></div></div>
+    <div class="svc"><div><h2>Hotel booking</h2><p>Tell us your dates and budget. We find a hotel that works for your plan and give you a booking you can use for your visa file too.</p>
+      <ul><li>Hotels matched to your budget and area</li><li>Booking confirmation for your visa application</li><li>Single rooms, family rooms and group stays</li></ul><a class="btn" href="#/contact">Book a hotel</a></div>
+      <div class="card"><div class="ic">🏨</div><p>Confirmed bookings you can attach to your visa file.</p></div></div>
+    <div class="svc"><div><h2>Air booking</h2><p>Flights from Dhaka to your destination and back. We compare options and book the one that fits your dates.</p>
+      <ul><li>One-way and return tickets</li><li>Flight booking for your visa application</li><li>Changes and questions answered by a real person</li></ul><a class="btn" href="#/contact">Book a flight</a></div>
+      <div class="card"><div class="ic">✈️</div><p>One-way and return tickets matched to your travel dates.</p></div></div>
+    <div style="padding:32px 0 56px"><h2>Also available</h2>
+      <div class="grid3">
+        <div class="card"><h3>Tour packages</h3><p>Custom international tours built around your dates and interests.</p><a class="more" href="#/contact">Ask about tours</a></div>
+        <div class="card"><h3>Travel insurance</h3><p>Cover for the unexpected while you are away.</p><a class="more" href="#/contact">Ask about cover</a></div>
+        <div class="card"><h3>Visa consultancy</h3><p>Not sure which visa or documents you need? Start with a conversation.</p><a class="more" href="#/contact">Ask a question</a></div>
+      </div></div>
+  </div>
+</div>
+
+<!-- VISA DOCUMENTS -->
+<div class="page" id="p-documents">
+  <div class="pagehead"><div class="wrap"><div class="bn">ভিসা ডকুমেন্টস</div><h1>Visa Documents</h1><p>Select a country to see the documents needed for that destination. Tick off what you already have and the bar shows how ready your file is.</p></div></div>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px">
+    <h2>Choose your country</h2>
+    <div class="countries" id="chips" role="group" aria-label="Countries"></div>
+    <div class="empty" id="empty">Pick a country above to see its document checklist.</div>
+
+    <div class="panel" id="panel">
+      <div>
+        <h2 id="ctitle"></h2>
+        <div class="who" id="who" role="group" aria-label="I am a"><button data-w="job" aria-pressed="true">Job holder</button><button data-w="biz" aria-pressed="false">Business person</button></div>
+        <div class="prog"><i id="bar"></i></div>
+        <div class="progtxt"><span id="ptxt"></span><button class="chip" id="reset" style="padding:4px 12px;font-size:.85rem">Clear ticks</button></div>
+        <div id="groups"></div>
+        <p class="warn">This is a general checklist. Embassies change their rules and ask for different papers depending on your job, travel history and purpose of visit. We confirm the latest list for your passport before you apply.</p>
+        <a class="btn gold" id="wa" target="_blank" rel="noopener" href="#">Ask us on WhatsApp</a>
+      </div>
+      <aside class="sheet">
+        <img id="simg" alt="" tabindex="0">
+        <div class="cap"><span id="scap"></span><span><a id="sopen" href="#" target="_blank" rel="noopener">Open full size</a> · <a id="sdl" href="#" download>Download</a></span></div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="p-contact">
+  <div class="pagehead"><div class="wrap"><h1>Visit or call us</h1><p>Walk in during office hours, or send a message and we will get back to you.</p></div></div>
+  <div class="wrap" style="padding-top:32px;padding-bottom:56px">
+    <div class="contact">
+      <div class="info">
+        <div><small>Office</small>14 Shantinagar Rd, Dhaka 1217</div>
+        <div><small>Phone</small><a href="tel:01805447210">01805-447210</a></div>
+        <div><small>Email</small><a href="mailto:journeyquestbd@gmail.com">journeyquestbd@gmail.com</a></div>
+        <div><small>Hours</small>Open daily, closes 6 PM</div>
+        <p style="margin-top:18px"><a class="btn alt" href="https://maps.google.com/?q=14+Shantinagar+Rd,+Dhaka+1217" target="_blank" rel="noopener">Get directions</a> <a class="btn" href="tel:01805447210">Call now</a></p>
+      </div>
+      <div class="card">
+        <h2>Message us on WhatsApp</h2>
+        <form id="wf">
+          <label class="f">Your name<input type="text" id="fn" required></label>
+          <label class="f">What do you need?<select id="fs"><option>Tourist visa processing</option><option>Visa consultancy</option><option>Air ticket booking</option><option>Hotel booking</option><option>Tour package</option><option>Travel insurance</option></select></label>
+          <label class="f">Where do you want to go?<input type="text" id="fd"></label>
+          <label class="f">Anything else we should know?<textarea id="fm"></textarea></label>
+          <button class="btn gold" type="submit">Send on WhatsApp</button>
+          <span class="fine">This opens WhatsApp with your message ready to send.</span>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap"><img src="images/logo.png" alt="Journey Quest"><span>© 2026 Journey Quest BD. Tour agency, Dhaka. 14 Shantinagar Rd, Dhaka 1217 · 01805-447210</span></div></footer>
+
+<div id="zoom" role="dialog" aria-label="Document sheet"><button aria-label="Close">×</button><img alt=""></div>
+
+<script>
+/* ---------- Visa document data (from your sheets) ---------- */
+const BIZ=['Trade License (English Notarized)','Tin/Bin Certificate','Official Pad & Visiting Card','Partnership Deed (For partnership business)','Memorandum & articles of association & incorporation certificate (for limited companies)','Membership certificate of business association'];
+const JOB=['NOC Letter','Salary Certificate','Pay slip','Office ID card'];
+const PH35='Recent Color Photo (35 x 45 mm, White Background)';
+const PH22='Recent Color Photo (2 x 2 inch, White Background)';
+const BANK='Bank Solvency & Bank Statement (Last 6 months)';
+const MARR='Marriage Certificate (if applicable)';
+const CARD='Credit or Debit Card Photocopy (if any)';
+const UTIL='Latest Utility / Wasa Bill Copy / Gas Bill Copy';
+const PROP='Documents of Properties (Land, Flat, Vehicles, etc.)';
+const OTHER='Documents of others income, if any';
+const FIN='All documents of financial solvency like FDR / Share business / other savings / deposit / cash investment etc.';
+const TAX='Income Tax Certificate, TIN, Income Tax Return (Last 3 years)';
+const std=(over={})=>Object.assign({basic:['Passport (All)',PH35,BANK,MARR],biz:BIZ,job:JOB,sup:[]},over);
+
+const C={
+ 'India':{title:'Indian Medical Visa',file:'india',
+   basic:['Visa Form','Passport (All)',PH22,BANK,MARR],
+   biz:['Trade License (English Notarized), Tin/Bin','Official Pad & Visiting Card',BIZ[3],BIZ[4],BIZ[5]],job:JOB,
+   sup:[UTIL,'NID Card','Bangladesh Doctor Report','Indian Doctor Appointment','Last Indian Visa Copy']},
+ 'Indonesia':{file:'indonesia',
+   basic:['All Passport, 2 blank passport pages, Passport photocopy',PH35,BANK,MARR],
+   biz:[BIZ[0],'Tin Certificate',BIZ[2],BIZ[3],BIZ[4],BIZ[5]],job:JOB,sup:['Travel Insurance','Check Pata']},
+ 'Japan':{file:'japan',
+   basic:['Visa Form','Passport (All)',PH35,BANK,MARR],biz:BIZ,job:JOB,sup:[TAX,PROP,FIN]},
+ 'Malaysia':{file:'malaysia',...std()},
+ 'Philippines':{file:'philippines',...std()},
+ 'Schengen':{file:'schengen',
+   basic:['Passport (All)',PH35,BANK,MARR,CARD],biz:BIZ,job:JOB,sup:['Travel Insurance',PROP,OTHER,FIN]},
+ 'Singapore':{file:'singapore',...std()},
+ 'South Korea':{file:'south-korea',
+   basic:['Visa Form','Passport (All)',PH35,BANK,MARR],biz:BIZ,job:JOB,sup:[TAX,PROP,FIN]},
+ 'Thailand':{file:'thailand',...std({sup:['Latest Utility Copy / Wasa Bill Copy / Gas Bill Copy']})},
+ 'Turkey (E-Visa)':{file:'turkey',
+   basic:['Passport Copy',PH35,'Valid UK, USA or Schengen Visa at the time of apply'],biz:[],job:[],sup:[]},
+ 'UK':{file:'uk',basic:['Passport (All)',PH35,BANK,MARR,CARD],biz:BIZ,job:JOB,sup:[PROP,OTHER,FIN]},
+ 'USA':{file:'usa',
+   basic:['Passport Copy',PH22],biz:['Visiting Card'],job:['Employee Details'],
+   sup:[UTIL,'NID Card','Social Media Account Link','Personal Mail & Contact Number','Parents & Spouse Details','Last 5 Years travel history','Education & Qualification Details']},
+ 'Australia':{file:'australia',basic:['Passport (All)',PH35,BANK,MARR,CARD],biz:BIZ,job:JOB,sup:[PROP,OTHER,FIN]},
+ 'Canada':{file:'canada',basic:['Passport (All)',PH35,BANK,MARR,CARD],biz:BIZ,job:JOB,sup:[PROP,OTHER,FIN]},
+ 'China':{file:'china',...std()},
+ 'Egypt':{file:'egypt',basic:['Visa Form','Passport (All)',PH35,BANK,MARR],biz:BIZ,job:JOB,sup:[]},
+ 'Hong Kong':{file:'hong-kong',...std()}
+};
+Object.entries(C).forEach(([k,v])=>{v.title=v.title||k+' Visa';});
+
+/* ---------- Router ---------- */
+const pages=['home','services','documents','contact'];
+function route(){
+  const r=(location.hash.replace(/^#\/?/,'')||'home').split('?')[0];
+  const id=pages.includes(r)?r:'home';
+  pages.forEach(p=>document.getElementById('p-'+p).classList.toggle('on',p===id));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.r===id));
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- Visa documents UI ---------- */
+const $=s=>document.querySelector(s);
+const chips=$('#chips'),panel=$('#panel'),empty=$('#empty'),groups=$('#groups');
+let cur=null,who='job',ticks={};
+try{ticks=JSON.parse(localStorage.getItem('jq_ticks')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('jq_ticks',JSON.stringify(ticks))}catch(e){}};
+
+Object.keys(C).forEach(n=>{
+  const b=document.createElement('button');b.className='chip';b.textContent=n;b.setAttribute('aria-pressed','false');
+  b.onclick=()=>pick(n);chips.appendChild(b);
+});
+
+function pick(n){
+  cur=n;const d=C[n];
+  chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.textContent===n));
+  empty.style.display='none';panel.classList.add('on');
+  $('#ctitle').textContent=d.title+' — Required Documents';
+  const img='images/'+d.file+'.jpg';
+  $('#simg').src=img;$('#simg').alt=d.title+' required documents sheet';
+  $('#sopen').href=img;$('#sdl').href=img;$('#sdl').setAttribute('download','Journey-Quest-'+d.file+'-visa-documents.jpg');
+  $('#scap').textContent=n+' document sheet';
+  const hasExtra=d.biz.length||d.job.length;
+  $('#who').style.display=hasExtra?'inline-flex':'none';
+  $('#wa').href='https://wa.me/8801805447210?text='+encodeURIComponent('Hello Journey Quest BD, I want to apply for a '+d.title+'.');
+  render();
+}
+function render(){
+  const d=C[cur];groups.innerHTML='';
+  const sets=[['Basic documents','basic',d.basic]];
+  if(who==='biz'&&d.biz.length)sets.push(['Extra documents for business person','biz',d.biz]);
+  if(who==='job'&&d.job.length)sets.push(['Extra documents for job holder','job',d.job]);
+  if(d.sup.length)sets.push(['Supporting documents','sup',d.sup]);
+  sets.forEach(([h,k,list])=>{
+    const g=document.createElement('div');g.className='group';g.innerHTML='<h3></h3>';g.firstChild.textContent=h;
+    list.forEach((t,i)=>{
+      const key=cur+'|'+k+'|'+i;
+      const l=document.createElement('label');
+      l.innerHTML='<input type="checkbox"><span></span>';
+      l.querySelector('span').textContent=t;
+      const cb=l.querySelector('input');cb.checked=!!ticks[key];cb.dataset.k=key;
+      cb.onchange=()=>{ticks[key]=cb.checked;if(!cb.checked)delete ticks[key];save();prog()};
+      g.appendChild(l);
+    });
+    groups.appendChild(g);
+  });
+  prog();
+}
+function prog(){
+  const all=[...groups.querySelectorAll('input')];const n=all.filter(i=>i.checked).length;
+  const p=all.length?Math.round(n/all.length*100):0;
+  $('#bar').style.width=p+'%';$('#ptxt').textContent=n+' of '+all.length+' ready ('+p+'%)';
+}
+$('#who').onclick=e=>{const b=e.target.closest('button');if(!b)return;who=b.dataset.w;
+  $('#who').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()};
+$('#reset').onclick=()=>{Object.keys(ticks).filter(k=>k.startsWith(cur+'|')).forEach(k=>delete ticks[k]);save();render()};
+
+/* zoom */
+const z=$('#zoom');
+$('#simg').onclick=()=>{z.querySelector('img').src=$('#simg').src;z.classList.add('on')};
+$('#simg').onkeydown=e=>{if(e.key==='Enter')$('#simg').click()};
+z.onclick=e=>{if(e.target!==z.querySelector('img'))z.classList.remove('on')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')z.classList.remove('on')});
+
+/* WhatsApp form */
+$('#wf').onsubmit=e=>{e.preventDefault();
+  const t='Hello Journey Quest BD,\nName: '+$('#fn').value+'\nNeed: '+$('#fs').value+'\nDestination: '+$('#fd').value+'\nNote: '+$('#fm').value;
+  window.open('https://wa.me/8801805447210?text='+encodeURIComponent(t),'_blank');};
+
+
+/* splash intro (once per visit) */
+(function(){const sp=document.getElementById('splash');let seen=false;
+ try{seen=sessionStorage.getItem('jq_splash')}catch(e){}
+ if(seen){sp.remove();return}
+ try{sessionStorage.setItem('jq_splash','1')}catch(e){}
+ const hide=()=>{sp.classList.add('out');setTimeout(()=>sp.remove(),700)};
+ setTimeout(hide,2900);sp.addEventListener('click',hide);sp.style.cursor='pointer';})();
+
+route();
+</script>
+</body>
+</html>
